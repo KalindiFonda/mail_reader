@@ -1,0 +1,2 @@
+name_list = [['Kalindi', 'Fonda', 'kalindi'], ['Kalindi', 'Fonda', 'kfonda'], ['Bryan', 'Villa', 'bvilla'], ['Abdul-rahman', 'Mohamed', 'amohamed'], ['John', 'Kelleher', 'jkellehe'], ['Sebastian', 'Kunz', 'skunz'], ['Madina', 'Seidualy', 'maseidua'], ['Jackson', 'Beall', 'jbeall'], ['Chanyang', 'Park', 'chapark'], ['Jessica', 'Liu', 'jeliu'], ['Yosef', 'Serkez', 'yserkez']]
+all_names = [' '.join(i) for i in name_list]

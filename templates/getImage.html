@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	  <title>Post an Image test</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+	  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+	</head>
+<body>
+ <script src="{{ url_for('static', filename='key_controls.js') }}"></script>
+<div class="info">
+	<p>
+		<b>How to</b><br>
+		To use keys to perform actions:
+		<br>Left Shift or 4: Take picture
+		<br>1, 2, 3: Select user
+		<br>Right Shift: Delete last user
+		<br> or click the buttons!
+	</p>
+</div>
+<div>
+	{% if options != None %}
+		<form action="{{ url_for('pick_user')}}" method="post" class="options">
+			{{options[1]}}
+			<input type="submit" id="option1" name="option" value="{{options[0]}}"><br>
+			{{options[3]}}
+			<input type="submit" id="option2" name="option" value="{{options[2]}}"><br>
+			{{options[5]}}
+			<input type="submit" id="option3" name="option" value="{{options[4]}}">
+		</form>
+	{% endif %}
+</div>
+<button onclick=getImagefromCanvas() id="take-pic" >Take image</button>
+<div class="lds-ellipsis" id="loader" style="display: none" ><div></div><div></div><div></div><div></div></div>
+<video id="myVideo" autoplay></video>
+<form action="{{ url_for('index')}}" method="get" class="text-input manual">
+	<input type="text" name="manual" placeholder="manual insert">
+	<input type="submit" value="submit">
+</form>
+<form action="{{ url_for('delete')}}" method="post" class="text-input delete">
+	<input type="text" name="delete" placeholder="add intra to delete" value="{{last}}">
+	<input type="submit" value="delete" id="last">
+</form>
+{% if success %}
+	<p class="success">{{success}}</p>
+{% endif %}
+{% if current_list %}
+	<p class="current_list">
+		Current list len {{current_list|length}}:<br>
+		{% for u in current_list%}
+			{{u}}
+		{% endfor %}
+	</p>
+{% endif %}
+ <script src="{{ url_for('static', filename='mail_reader.js') }}"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,124 @@
+body {
+	width: 800px;
+	margin: 10px auto;
+}
+
+input[type=submit],
+#take-pic {
+	border: none;
+	height: 2em;
+	border-radius: 5px;
+	margin: 10px auto;
+		-webkit-box-shadow: 1px 1px 1px 1px #ccc;
+  	-moz-box-shadow:    1px 1px 1px 1px #ccc;
+  	box-shadow:         1px 1px 1px 1px #ccc;
+  	text-align: center;
+}
+
+button {
+	min-width: 100%;
+	font-size: 25px;
+	font-weight: 700;
+	background-color: #ffb593;
+}
+
+.options {
+	font-size: 25px;
+}
+
+.options input[type=submit] {
+	width: 94%;
+	font-size: 25px;
+	background-color: lightgreen;
+}
+
+.manual {
+	display: flex;
+	align-content: space-between;
+	margin-top: 10px;
+}
+
+.manual input[type=text] {
+	width: 78%;
+	text-align: center;
+}
+
+.manual input[type=submit] {
+	width: 18%;
+	font-size: 15px;
+	background-color: lightgreen;
+}
+
+.extra,
+.info {
+	position: fixed;
+	top: 0;
+	right: 20px;
+}
+
+.info {
+	left: 20px;
+	max-width: 230px;
+}
+
+
+/* loader lol */
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  left: 45%;
+  margin: auto 0;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 27px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: lightgreen;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 6px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 6px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 26px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 45px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(19px, 0);
+  }
+}
+
